@@ -17,7 +17,16 @@ export default function SantsModalContent() {
           title: "Resultado",
           text: "Uma arquitetura altamente escalável e integrada a core bancários legados, garantindo confiabilidade, conformidade regulatória e uma experiência de usuário fluida em alta escala.",
         }}
-        imageUrl="/melphisinteira.svg"
+        images={[
+          "/santsinteira.svg",
+          "/santshome.svg",
+          "/santsareapix.svg",
+          "/santsescolhercontato.svg",
+          "/santsinfosdopix.svg",
+          "/santscomprovante.svg",
+          "/santsextrato.svg",
+          "/santsextratodetalhado.svg",
+        ]}
       />
     </>
   );

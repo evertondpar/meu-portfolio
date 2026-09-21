@@ -27,7 +27,7 @@ export default function MelphisTvModalContent() {
             </>
           ),
         }}
-        imageUrl="/melphistvinteira.svg"
+        images={["/melphistvinteira.svg"]}
       />
     </>
   );

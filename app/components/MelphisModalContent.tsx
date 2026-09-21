@@ -27,7 +27,13 @@ export default function MelphisModalContent() {
             </>
           ),
         }}
-        imageUrl="/melphisinteira.svg"
+        images={[
+          "/melphisinteira.svg",
+          "/melphisplayer.svg",
+          "/melphislistaradios.svg",
+          "/melphisvozdoouvinte.svg",
+          "/melphispromocoes.svg",
+        ]}
       />
     </>
   );

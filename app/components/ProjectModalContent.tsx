@@ -1,6 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
+import { useEffect, useState } from "react";
 import ScrollReveal from "./ScrollReveal";
+import { AnimatePresence, motion } from "framer-motion";
 
 export interface ProjectModalContentSection {
   title: string;
@@ -11,15 +13,28 @@ export interface ProjectModalContentProps {
   firstSection: ProjectModalContentSection;
   secondSection: ProjectModalContentSection;
   thirdSection: ProjectModalContentSection;
-  imageUrl: string;
+  images: string[];
 }
 export default function ProjectModalContent({
   title,
   firstSection,
   secondSection,
   thirdSection,
-  imageUrl,
+  images,
 }: ProjectModalContentProps) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 4000);
+
+    return () => clearInterval(timer);
+  }, [images.length]);
+
+  useEffect(() => {
+    console.log("current ", currentIndex);
+  }, [currentIndex]);
   return (
     <div className="flex flex-1 flex-col w-full items-center justify-around">
       <ScrollReveal className="w-full h-auto flex flex-col items-center">
@@ -51,11 +66,22 @@ export default function ProjectModalContent({
             </span>
           </div>
           <div className="w-full max-w-[600px] h-[200px] lg:h-[800px] rounded-[1rem] overflow-hidden">
-            <img
-              src={imageUrl}
-              alt={"title"}
-              className="w-full  h-full object-cover"
-            />
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentIndex}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 1, ease: "easeInOut" }} // Duração de 1 segundo para o fade
+                className="w-full  h-full"
+              >
+                <img
+                  src={images[currentIndex]}
+                  alt={"title"}
+                  className={`w-full  h-full lg:w-[600px] lg:h-[800px] ${currentIndex === 0 ? " object-cover" : ""}`}
+                />
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
       </ScrollReveal>
