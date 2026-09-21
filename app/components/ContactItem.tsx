@@ -2,19 +2,17 @@ import Image from "next/image";
 
 export default function ContactItem({
   icon,
-  text,
+  link,
 }: {
   icon: string;
-  text: string;
+  link: React.ReactNode;
 }) {
   return (
-    <div className="flex gap-4">
+    <div className="flex items-center gap-4">
       <div className="bg-white px-2 py-2 rounded-md">
-        <Image src={`/${icon}.png`} alt={icon} width={30} height={30} />
+        <Image src={`/${icon}.png`} alt={icon} width={25} height={25} />
       </div>
-      <span className="text-[18px] lg:text-[26px] font-light text-white">
-        {text}
-      </span>
+      {link}
     </div>
   );
 }

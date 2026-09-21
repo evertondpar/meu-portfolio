@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-comment-textnodes */
 "use client";
 import Image from "next/image";
 
@@ -42,18 +43,18 @@ export default function Home() {
   return (
     <div className="flex flex-col flex-1 items-center bg-zinc-50 font-sans dark:bg-black">
       <div className="w-full flex flex-col bg-[#0a001b] relative border-t-[8px] border-t-blue-500">
-        {/* <div className="w-full h-3 bg-blue-500" /> */}
         <div className="absolute top-[-10%] left-[20%] w-full lg:w-[500px] lg:h-[300px] bg-purple-600/15 rounded-full blur-[120px] pointer-events-none" />
-        <div className="flex flex-1 flex-col-reverse lg:flex-row items-center justify-around pt-45 pb-65">
-          <div className=" lg:items-start relative flex flex-col items-center w-full px-8 lg:px-0 max-w-4xl text-white">
+        //INICIO SEÇÃO 1
+        <div className="flex flex-1 flex-col-reverse lg:flex-row items-center justify-around pt-25 pb-35">
+          <div className=" lg:items-start relative flex flex-col items-center w-full px-8 lg:px-0 max-w-2xl text-white">
             <Typewriter
               text="Bem vindo."
-              className="text-[3.5rem] lg:text-[6.5rem] font-extralight lg:ml-[-11px] text-[#2b69fb]"
+              className="text-[3.5rem] lg:text-[4.5rem] font-extralight lg:ml-[-11px] text-[#2b69fb]"
               speed={60}
             />
             <FadeWords
               text="Sou Full Stack Developer | Web, Mobile e APIs com 3+ anos de experiência profissional. Atuo no desenvolvimento, evolução, manutenção e integração de sistemas, desde as regras de negócio até o produto final, sempre focando em código limpo, escalável e soluções alinhadas às necessidades do negócio."
-              className="text-[18px] lg:text-[26px] font-light text-white"
+              className="text-[18px] lg:text-[20px] font-light text-white"
             />
           </div>
           <div
@@ -66,13 +67,14 @@ export default function Home() {
             <Image
               src="/hero.webp" // Caminho relativo à pasta public
               alt="Foto de perfil" // Descrição obrigatória para acessibilidade
-              width={500} // Largura em pixels
-              height={500} // Altura em pixels
+              width={400} // Largura em pixels
+              height={400} // Altura em pixels
               className="rounded-full shadow-lg object-cover"
               priority
             />
           </div>
         </div>
+        //FIM SEÇÃO 1 //INICIO SEÇÃO 2
         <div className="w-full flex flex-col items-center overflow-hidden">
           <div className="w-[600vw] lg:w-[250vw] lg:h-auto bg-white rounded-t-[100%] rounded-b-[100%] flex flex-col items-center py-28">
             <ScrollReveal className="w-screen h-auto flex flex-col items-center d-none">
@@ -94,10 +96,10 @@ export default function Home() {
               >
                 <SantsModalContent />
               </Modal>
-              <span className="text-[3.5rem] lg:text-[4.5rem] font-medium text-[#2b69fb]">
+              <span className="text-[3.5rem] lg:text-[3rem] font-medium text-[#2b69fb]">
                 Meu trabalho
               </span>
-              <span className="text-[1.5rem] font-sans text-gray-600">
+              <span className="text-[1.5rem] lg:text-[1rem] font-sans text-gray-600">
                 Projetos nos quais já atuei.
               </span>
               <div className="w-screen lg:w-auto flex flex-col items-center lg:flex-row gap-8 mt-16 mb-20">
@@ -144,27 +146,29 @@ export default function Home() {
             </ScrollReveal>
           </div>
         </div>
+        //FIM SEÇÃO 2 //INICIO SEÇÃO 3
         <div className="flex flex-1 flex-col w-full items-center justify-around lg:p-48 lg:px-0 lg:pt-24">
           <ScrollReveal className="w-full h-auto flex flex-col items-center">
             <div className=" relative flex flex-col items-center w-full px-8 lg:px-32 text-white ">
               <Typewriter
                 text="Resumo Profissional"
-                className="text-[3.5rem] lg:text-[6.5rem] font-extralight  text-[#2b69fb] "
+                className="text-[3.5rem] lg:text-[4.5rem] font-extralight  text-[#2b69fb] "
                 speed={60}
               />
               <FadeWords
                 text="Em minha experiência profissional, atuei no desenvolvimento de sistemas web e mobile. Na Sants SCD, participei desde a definição das regras de negócio até a construção do produto, com atuação no desenvolvimento da API e integração com sistemas externos, como a Lydians, para realização de transações bancárias. Também desenvolvi interfaces e fluxos do app, incluindo pagamentos via Pix, boleto, TED e onboarding de usuários."
-                className="text-[18px] lg:text-[26px] font-light text-white"
+                className="text-[18px] lg:text-[20px] font-light text-white"
               />
             </div>
           </ScrollReveal>
         </div>
+        //FIM SEÇÃO 3 //INICIO SEÇÃO 4
         <div className="flex flex-1 flex-col w-full items-center justify-around lg:pb-48">
           <ScrollReveal className="w-full h-auto flex flex-col items-center">
             <div className=" relative flex flex-col items-center w-full px-8 lg:px-32 text-white">
               <Typewriter
                 text="Tecnologias e Ferramentas"
-                className="text-[3.5rem] lg:text-[6.5rem] font-extralight  text-[#2b69fb] "
+                className="text-[3.5rem] lg:text-[4.5rem] font-extralight  text-[#2b69fb] "
                 speed={60}
               />
               <div className="flex flex-wrap gap-4 mt-8 justify-center">
@@ -173,8 +177,8 @@ export default function Home() {
                     <Image
                       src={`/${tech}`}
                       alt={`Tecnologia ${index + 1}`}
-                      width={50}
-                      height={50}
+                      width={40}
+                      height={40}
                     />
                   </div>
                 ))}
@@ -182,17 +186,18 @@ export default function Home() {
             </div>
           </ScrollReveal>
         </div>
+        //FIM SEÇÃO 4 //INICIO SEÇÃO 5
         <ScrollReveal className="w-full h-auto flex flex-col items-center">
-          <div className="flex flex-1 flex-col gap-8 lg:flex-row items-center justify-around lg:pb-48">
-            <div className=" lg:items-start relative flex flex-col items-center w-full px-8 lg:px-0 max-w-4xl text-white">
+          <div className="flex flex-1 flex-col gap-8 lg:gap-32 lg:flex-row items-center justify-around lg:pb-16">
+            <div className=" lg:items-start relative flex flex-col items-center w-full px-8 lg:px-0 max-w-2xl text-white">
               <Typewriter
                 text="Disponível!"
-                className="text-[3.5rem] lg:text-[6.5rem] font-extralight lg:ml-[-11px] text-[#2b69fb]"
+                className="text-[3.5rem] lg:text-[4.5rem] font-extralight lg:ml-[-11px] text-[#2b69fb]"
                 speed={60}
               />
               <FadeWords
                 text="Vamos construir algo incrível juntos! Se você está procurando um desenvolvedor Full Stack para transformar suas ideias em realidade, estou pronto para colaborar. Entre em contato e vamos discutir como posso contribuir para o sucesso do seu projeto."
-                className="text-[18px] lg:text-[26px] font-light text-white"
+                className="text-[18px] lg:text-[20px] font-light text-white"
               />
             </div>
             <div
@@ -202,23 +207,68 @@ export default function Home() {
                   : "opacity-0 translate-y-4 scale-95"
               } flex flex-col items-start gap-4`}
             >
-              <span className="text-[2.5rem] font-extralight text-[#2b69fb]">
+              <span className="text-[1.5rem] font-extralight text-[#2b69fb]">
                 Meus contatos
               </span>
-              <ContactItem icon="email" text="evertonpaula03@gmail.com" />
-              <ContactItem icon="phone" text="+55 (35) 99853-0798" />
-              <ContactItem icon="linkedin" text="linkedin.com/in/evertondpar" />
-              <ContactItem icon="github" text="github.com/evertondpar" />
+              <ContactItem
+                link={
+                  <a
+                    href={"mailto:evertonpaula03@gmail.com"}
+                    className=" text-[18px] lg:text-[20px] cursor-pointer text-white hover:text-blue-500 font-light transition"
+                  >
+                    evertonpaula03@gmail.com
+                  </a>
+                }
+                icon="email"
+              />
+              <ContactItem
+                link={
+                  <a
+                    href={"tel:+5535998530798"}
+                    className=" text-[18px] lg:text-[20px] cursor-pointer text-white hover:text-blue-500 font-light transition"
+                  >
+                    +55 (35) 99853-0798
+                  </a>
+                }
+                icon="phone"
+              />
+              <ContactItem
+                link={
+                  <a
+                    href={"https://linkedin.com/in/evertondpar"}
+                    className=" text-[18px] lg:text-[20px] cursor-pointer text-white hover:text-blue-500 font-light transition"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    linkedin.com/in/evertondpar
+                  </a>
+                }
+                icon="linkedin"
+              />
+              <ContactItem
+                link={
+                  <a
+                    href={"https://github.com/evertondpar"}
+                    className=" text-[18px] lg:text-[20px] cursor-pointer text-white hover:text-blue-500 font-light transition"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    github.com/evertondpar
+                  </a>
+                }
+                icon="github"
+              />
             </div>
           </div>
-          <div className="flex w-full h-70 justify-end items-center px-32">
+          <div className="flex w-full h-24 justify-end items-center pr-16">
             <Typewriter
               text="©2026 Everton Portfólio"
-              className="text-[2.5rem] font-extralight  text-[#2b69fb]"
+              className="text-[1rem] font-extralight  text-[#2b69fb]"
               speed={60}
             />
           </div>
         </ScrollReveal>
+        //FIM SEÇÃO 5
       </div>
     </div>
   );
