@@ -1,69 +1,191 @@
+"use client";
 import Image from "next/image";
 
+import { useEffect, useState } from "react";
+import Typewriter from "./components/Typewriter";
+import ProjectCard from "./components/ProjectCard";
+import FadeWords from "./components/FadeWords";
+import ContactItem from "./components/ContactItem";
+
+const TECH_IMAGES = [
+  "react-native.png",
+  "reactjs.png",
+  "mysql-logo.png",
+  "apis.png",
+  "javascript.png",
+  "typescript.png",
+  "css3.png",
+  "html-5.png",
+  "git-50.png",
+  "docker.png",
+  "chatgpt.png",
+  "claude.png",
+  "gemini.png",
+];
+
 export default function Home() {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    // Pequeno atraso para disparar a animação logo após o componente carregar
+    const timer = setTimeout(() => setIsLoaded(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div className="flex flex-col flex-1 items-center bg-zinc-50 font-sans dark:bg-black">
+      <div className="w-full flex flex-col bg-[#0a001b] relative border-t-[8px] border-t-blue-500">
+        {/* <div className="w-full h-3 bg-blue-500" /> */}
+        <div className="absolute top-[-10%] left-[20%] w-full lg:w-[500px] lg:h-[300px] bg-purple-600/15 rounded-full blur-[120px] pointer-events-none" />
+        <div className="flex flex-1 flex-col-reverse lg:flex-row items-center justify-around pt-45 pb-65">
+          <div className=" lg:items-start relative flex flex-col items-center w-full px-8 lg:px-0 max-w-4xl text-white">
+            <Typewriter
+              text="Bem vindo."
+              className="text-[3.5rem] lg:text-[6.5rem] font-extralight lg:ml-[-11px] text-[#2b69fb]"
+              speed={60}
+            />
+            <FadeWords
+              text="Sou Full Stack Developer | Web, Mobile e APIs com 3+ anos de experiência profissional. Atuo no desenvolvimento, evolução, manutenção e integração de sistemas, desde as regras de negócio até o produto final, sempre focando em código limpo, escalável e soluções alinhadas às necessidades do negócio."
+              className="text-[18px] lg:text-[26px] font-light text-white"
+            />
+          </div>
+          <div
+            className={`transition-all duration-[2000ms] ease-out ${
+              isLoaded
+                ? "opacity-100 translate-y-0 scale-100"
+                : "opacity-0 translate-y-4 scale-95"
+            }`}
           >
             <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
+              src="/hero.webp" // Caminho relativo à pasta public
+              alt="Foto de perfil" // Descrição obrigatória para acessibilidade
+              width={500} // Largura em pixels
+              height={500} // Altura em pixels
+              className="rounded-full shadow-lg object-cover"
+              priority
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </div>
         </div>
-      </main>
+        <div className="w-full flex flex-col items-center overflow-hidden">
+          <div className="w-[600vw] lg:w-[250vw] lg:h-auto bg-white rounded-t-[100%] rounded-b-[100%] flex flex-col items-center py-28">
+            <span className="text-[3.5rem] lg:text-[4.5rem] font-medium text-[#2b69fb]">
+              Meu trabalho
+            </span>
+            <span className="text-[1.5rem] font-sans text-gray-600">
+              Projetos nos quais já atuei.
+            </span>
+            <div className="w-screen lg:w-auto flex flex-col items-center lg:flex-row gap-8 mt-16 mb-20">
+              <ProjectCard
+                title="Sants SCD (App Financeiro)"
+                description="Solução mobile para transações financeiras. Focada em operações e funcionalidades Pix, além de pagamentos de boletos e transferências via TED."
+                imageUrl="./santsapp.jpg"
+                link="https://example.com"
+                technologies={[
+                  "React Native",
+                  "TypeScript",
+                  "Node.js",
+                  "Nest.js",
+                  "MySQL",
+                ]}
+              />
+              <ProjectCard
+                title="Melphis.fm (Rádio e Vídeo)"
+                description="Solução mobile para streaming de rádio e vídeo, disponível para Android e iOS, com funcionalidades de seleção e gerenciamento de estações favoritas, além de participação em promoções e outras interações dentro da plataforma."
+                imageUrl="./melphis.jpg"
+                link="https://example.com"
+                technologies={[
+                  "React Native",
+                  "TypeScript",
+                  "Node.js",
+                  "Nest.js",
+                  "MySQL",
+                ]}
+              />
+              <ProjectCard
+                title="Melphis TV (Streaming de Vídeo)"
+                description="Solução mobile para streaming de vídeo. Transmite o canal de tv da emissora Melphis, disponível para Android e iOS."
+                imageUrl="./mtv.jpg"
+                link="https://example.com"
+                technologies={[
+                  "React Native",
+                  "TypeScript",
+                  "Node.js",
+                  "Nest.js",
+                  "MySQL",
+                ]}
+              />
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-1 flex-col w-full items-center justify-around lg:p-48 lg:px-0 lg:pt-24">
+          <div className=" relative flex flex-col items-center w-full px-8 lg:px-32 text-white ">
+            <Typewriter
+              text="Resumo Profissional"
+              className="text-[3.5rem] lg:text-[6.5rem] font-extralight  text-[#2b69fb] "
+              speed={60}
+            />
+            <FadeWords
+              text="Em minha experiência profissional, atuei no desenvolvimento de sistemas web e mobile. Na Sants SCD, participei desde a definição das regras de negócio até a construção do produto, com atuação no desenvolvimento da API e integração com sistemas externos, como a Lydians, para realização de transações bancárias. Também desenvolvi interfaces e fluxos do app, incluindo pagamentos via Pix, boleto, TED e onboarding de usuários."
+              className="text-[18px] lg:text-[26px] font-light text-white"
+            />
+          </div>
+        </div>
+        <div className="flex flex-1 flex-col w-full items-center justify-around lg:pb-48">
+          <div className=" relative flex flex-col items-center w-full px-8 lg:px-32 text-white">
+            <Typewriter
+              text="Tecnologias e Ferramentas"
+              className="text-[3.5rem] lg:text-[6.5rem] font-extralight  text-[#2b69fb] "
+              speed={60}
+            />
+            <div className="flex flex-wrap gap-4 mt-8 justify-center">
+              {TECH_IMAGES.map((tech, index) => (
+                <div key={index} className="bg-white px-4 py-2 rounded-md">
+                  <Image
+                    src={`/${tech}`}
+                    alt={`Tecnologia ${index + 1}`}
+                    width={50}
+                    height={50}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-1 flex-col gap-8 lg:flex-row items-center justify-around lg:pb-48">
+          <div className=" lg:items-start relative flex flex-col items-center w-full px-8 lg:px-0 max-w-4xl text-white">
+            <Typewriter
+              text="Disponível!"
+              className="text-[3.5rem] lg:text-[6.5rem] font-extralight lg:ml-[-11px] text-[#2b69fb]"
+              speed={60}
+            />
+            <FadeWords
+              text="Vamos construir algo incrível juntos! Se você está procurando um desenvolvedor Full Stack para transformar suas ideias em realidade, estou pronto para colaborar. Entre em contato e vamos discutir como posso contribuir para o sucesso do seu projeto."
+              className="text-[18px] lg:text-[26px] font-light text-white"
+            />
+          </div>
+          <div
+            className={`transition-all duration-[2000ms] ease-out ${
+              isLoaded
+                ? "opacity-100 translate-y-0 scale-100"
+                : "opacity-0 translate-y-4 scale-95"
+            } flex flex-col items-start gap-4`}
+          >
+            <span className="text-[2.5rem] font-extralight text-[#2b69fb]">
+              Meus contatos
+            </span>
+            <ContactItem icon="email" text="evertonpaula03@gmail.com" />
+            <ContactItem icon="phone" text="+55 (35) 99853-0798" />
+            <ContactItem icon="linkedin" text="linkedin.com/in/evertondpar" />
+            <ContactItem icon="github" text="github.com/evertondpar" />
+          </div>
+        </div>
+        <div className="flex w-full h-70 justify-end items-center px-32">
+          <Typewriter
+            text="©2026 Everton Portfólio"
+            className="text-[2.5rem] font-extralight  text-[#2b69fb]"
+            speed={60}
+          />
+        </div>
+      </div>
     </div>
   );
 }
