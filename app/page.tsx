@@ -6,6 +6,7 @@ import Typewriter from "./components/Typewriter";
 import ProjectCard from "./components/ProjectCard";
 import FadeWords from "./components/FadeWords";
 import ContactItem from "./components/ContactItem";
+import ScrollReveal from "./components/ScrollReveal";
 
 const TECH_IMAGES = [
   "react-native.png",
@@ -67,124 +68,132 @@ export default function Home() {
         </div>
         <div className="w-full flex flex-col items-center overflow-hidden">
           <div className="w-[600vw] lg:w-[250vw] lg:h-auto bg-white rounded-t-[100%] rounded-b-[100%] flex flex-col items-center py-28">
-            <span className="text-[3.5rem] lg:text-[4.5rem] font-medium text-[#2b69fb]">
-              Meu trabalho
-            </span>
-            <span className="text-[1.5rem] font-sans text-gray-600">
-              Projetos nos quais já atuei.
-            </span>
-            <div className="w-screen lg:w-auto flex flex-col items-center lg:flex-row gap-8 mt-16 mb-20">
-              <ProjectCard
-                title="Sants SCD (App Financeiro)"
-                description="Solução mobile para transações financeiras. Focada em operações e funcionalidades Pix, além de pagamentos de boletos e transferências via TED."
-                imageUrl="./santsapp.jpg"
-                link="https://example.com"
-                technologies={[
-                  "React Native",
-                  "TypeScript",
-                  "Node.js",
-                  "Nest.js",
-                  "MySQL",
-                ]}
-              />
-              <ProjectCard
-                title="Melphis.fm (Rádio e Vídeo)"
-                description="Solução mobile para streaming de rádio e vídeo, disponível para Android e iOS, com funcionalidades de seleção e gerenciamento de estações favoritas, além de participação em promoções e outras interações dentro da plataforma."
-                imageUrl="./melphis.jpg"
-                link="https://example.com"
-                technologies={[
-                  "React Native",
-                  "TypeScript",
-                  "Node.js",
-                  "Nest.js",
-                  "MySQL",
-                ]}
-              />
-              <ProjectCard
-                title="Melphis TV (Streaming de Vídeo)"
-                description="Solução mobile para streaming de vídeo. Transmite o canal de tv da emissora Melphis, disponível para Android e iOS."
-                imageUrl="./mtv.jpg"
-                link="https://example.com"
-                technologies={[
-                  "React Native",
-                  "TypeScript",
-                  "Node.js",
-                  "Nest.js",
-                  "MySQL",
-                ]}
-              />
-            </div>
+            <ScrollReveal className="w-full h-auto flex flex-col items-center d-none">
+              <span className="text-[3.5rem] lg:text-[4.5rem] font-medium text-[#2b69fb]">
+                Meu trabalho
+              </span>
+              <span className="text-[1.5rem] font-sans text-gray-600">
+                Projetos nos quais já atuei.
+              </span>
+              <div className="w-screen lg:w-auto flex flex-col items-center lg:flex-row gap-8 mt-16 mb-20">
+                <ProjectCard
+                  title="Sants SCD (App Financeiro)"
+                  description="Solução mobile para transações financeiras. Focada em operações e funcionalidades Pix, além de pagamentos de boletos e transferências via TED."
+                  imageUrl="./santsapp.jpg"
+                  link="https://example.com"
+                  technologies={[
+                    "React Native",
+                    "TypeScript",
+                    "Node.js",
+                    "Nest.js",
+                    "MySQL",
+                  ]}
+                />
+                <ProjectCard
+                  title="Melphis.fm (Rádio e Vídeo)"
+                  description="Solução mobile para streaming de rádio e vídeo, disponível para Android e iOS, com funcionalidades de seleção e gerenciamento de estações favoritas, além de participação em promoções e outras interações dentro da plataforma."
+                  imageUrl="./melphis.jpg"
+                  link="https://example.com"
+                  technologies={[
+                    "React Native",
+                    "TypeScript",
+                    "Node.js",
+                    "Nest.js",
+                    "MySQL",
+                  ]}
+                />
+                <ProjectCard
+                  title="Melphis TV (Streaming de Vídeo)"
+                  description="Solução mobile para streaming de vídeo. Transmite o canal de tv da emissora Melphis, disponível para Android e iOS."
+                  imageUrl="./mtv.jpg"
+                  link="https://example.com"
+                  technologies={[
+                    "React Native",
+                    "TypeScript",
+                    "Node.js",
+                    "Nest.js",
+                    "MySQL",
+                  ]}
+                />
+              </div>
+            </ScrollReveal>
           </div>
         </div>
         <div className="flex flex-1 flex-col w-full items-center justify-around lg:p-48 lg:px-0 lg:pt-24">
-          <div className=" relative flex flex-col items-center w-full px-8 lg:px-32 text-white ">
-            <Typewriter
-              text="Resumo Profissional"
-              className="text-[3.5rem] lg:text-[6.5rem] font-extralight  text-[#2b69fb] "
-              speed={60}
-            />
-            <FadeWords
-              text="Em minha experiência profissional, atuei no desenvolvimento de sistemas web e mobile. Na Sants SCD, participei desde a definição das regras de negócio até a construção do produto, com atuação no desenvolvimento da API e integração com sistemas externos, como a Lydians, para realização de transações bancárias. Também desenvolvi interfaces e fluxos do app, incluindo pagamentos via Pix, boleto, TED e onboarding de usuários."
-              className="text-[18px] lg:text-[26px] font-light text-white"
-            />
-          </div>
+          <ScrollReveal className="w-full h-auto flex flex-col items-center">
+            <div className=" relative flex flex-col items-center w-full px-8 lg:px-32 text-white ">
+              <Typewriter
+                text="Resumo Profissional"
+                className="text-[3.5rem] lg:text-[6.5rem] font-extralight  text-[#2b69fb] "
+                speed={60}
+              />
+              <FadeWords
+                text="Em minha experiência profissional, atuei no desenvolvimento de sistemas web e mobile. Na Sants SCD, participei desde a definição das regras de negócio até a construção do produto, com atuação no desenvolvimento da API e integração com sistemas externos, como a Lydians, para realização de transações bancárias. Também desenvolvi interfaces e fluxos do app, incluindo pagamentos via Pix, boleto, TED e onboarding de usuários."
+                className="text-[18px] lg:text-[26px] font-light text-white"
+              />
+            </div>
+          </ScrollReveal>
         </div>
         <div className="flex flex-1 flex-col w-full items-center justify-around lg:pb-48">
-          <div className=" relative flex flex-col items-center w-full px-8 lg:px-32 text-white">
-            <Typewriter
-              text="Tecnologias e Ferramentas"
-              className="text-[3.5rem] lg:text-[6.5rem] font-extralight  text-[#2b69fb] "
-              speed={60}
-            />
-            <div className="flex flex-wrap gap-4 mt-8 justify-center">
-              {TECH_IMAGES.map((tech, index) => (
-                <div key={index} className="bg-white px-4 py-2 rounded-md">
-                  <Image
-                    src={`/${tech}`}
-                    alt={`Tecnologia ${index + 1}`}
-                    width={50}
-                    height={50}
-                  />
-                </div>
-              ))}
+          <ScrollReveal className="w-full h-auto flex flex-col items-center">
+            <div className=" relative flex flex-col items-center w-full px-8 lg:px-32 text-white">
+              <Typewriter
+                text="Tecnologias e Ferramentas"
+                className="text-[3.5rem] lg:text-[6.5rem] font-extralight  text-[#2b69fb] "
+                speed={60}
+              />
+              <div className="flex flex-wrap gap-4 mt-8 justify-center">
+                {TECH_IMAGES.map((tech, index) => (
+                  <div key={index} className="bg-white px-4 py-2 rounded-md">
+                    <Image
+                      src={`/${tech}`}
+                      alt={`Tecnologia ${index + 1}`}
+                      width={50}
+                      height={50}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+        <ScrollReveal className="w-full h-auto flex flex-col items-center">
+          <div className="flex flex-1 flex-col gap-8 lg:flex-row items-center justify-around lg:pb-48">
+            <div className=" lg:items-start relative flex flex-col items-center w-full px-8 lg:px-0 max-w-4xl text-white">
+              <Typewriter
+                text="Disponível!"
+                className="text-[3.5rem] lg:text-[6.5rem] font-extralight lg:ml-[-11px] text-[#2b69fb]"
+                speed={60}
+              />
+              <FadeWords
+                text="Vamos construir algo incrível juntos! Se você está procurando um desenvolvedor Full Stack para transformar suas ideias em realidade, estou pronto para colaborar. Entre em contato e vamos discutir como posso contribuir para o sucesso do seu projeto."
+                className="text-[18px] lg:text-[26px] font-light text-white"
+              />
+            </div>
+            <div
+              className={`transition-all duration-[2000ms] ease-out ${
+                isLoaded
+                  ? "opacity-100 translate-y-0 scale-100"
+                  : "opacity-0 translate-y-4 scale-95"
+              } flex flex-col items-start gap-4`}
+            >
+              <span className="text-[2.5rem] font-extralight text-[#2b69fb]">
+                Meus contatos
+              </span>
+              <ContactItem icon="email" text="evertonpaula03@gmail.com" />
+              <ContactItem icon="phone" text="+55 (35) 99853-0798" />
+              <ContactItem icon="linkedin" text="linkedin.com/in/evertondpar" />
+              <ContactItem icon="github" text="github.com/evertondpar" />
             </div>
           </div>
-        </div>
-        <div className="flex flex-1 flex-col gap-8 lg:flex-row items-center justify-around lg:pb-48">
-          <div className=" lg:items-start relative flex flex-col items-center w-full px-8 lg:px-0 max-w-4xl text-white">
+          <div className="flex w-full h-70 justify-end items-center px-32">
             <Typewriter
-              text="Disponível!"
-              className="text-[3.5rem] lg:text-[6.5rem] font-extralight lg:ml-[-11px] text-[#2b69fb]"
+              text="©2026 Everton Portfólio"
+              className="text-[2.5rem] font-extralight  text-[#2b69fb]"
               speed={60}
             />
-            <FadeWords
-              text="Vamos construir algo incrível juntos! Se você está procurando um desenvolvedor Full Stack para transformar suas ideias em realidade, estou pronto para colaborar. Entre em contato e vamos discutir como posso contribuir para o sucesso do seu projeto."
-              className="text-[18px] lg:text-[26px] font-light text-white"
-            />
           </div>
-          <div
-            className={`transition-all duration-[2000ms] ease-out ${
-              isLoaded
-                ? "opacity-100 translate-y-0 scale-100"
-                : "opacity-0 translate-y-4 scale-95"
-            } flex flex-col items-start gap-4`}
-          >
-            <span className="text-[2.5rem] font-extralight text-[#2b69fb]">
-              Meus contatos
-            </span>
-            <ContactItem icon="email" text="evertonpaula03@gmail.com" />
-            <ContactItem icon="phone" text="+55 (35) 99853-0798" />
-            <ContactItem icon="linkedin" text="linkedin.com/in/evertondpar" />
-            <ContactItem icon="github" text="github.com/evertondpar" />
-          </div>
-        </div>
-        <div className="flex w-full h-70 justify-end items-center px-32">
-          <Typewriter
-            text="©2026 Everton Portfólio"
-            className="text-[2.5rem] font-extralight  text-[#2b69fb]"
-            speed={60}
-          />
-        </div>
+        </ScrollReveal>
       </div>
     </div>
   );
