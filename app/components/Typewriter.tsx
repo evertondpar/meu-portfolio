@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 interface TypewriterProps {
   text: string;
-  speed?: number; // Velocidade em milissegundos por letra
+  speed?: number;
   className?: string;
 }
 
@@ -26,11 +26,5 @@ export default function Typewriter({
     }
   }, [index, text, speed]);
 
-  return (
-    <span className={className}>
-      {displayedText}
-      {/* Opcional: um cursor a piscar no final */}
-      {/* <span className="animate-pulse">|</span> */}
-    </span>
-  );
+  return <span className={className}>{displayedText}</span>;
 }

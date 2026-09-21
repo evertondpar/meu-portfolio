@@ -11,7 +11,6 @@ export default function FadeWords({ text, className = "" }: FadeWordsProps) {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    // Garante que a animação dispara logo após o componente montar
     setTimeout(() => {
       const timer = setTimeout(() => setIsLoaded(true), 50);
       return () => clearTimeout(timer);
@@ -29,7 +28,6 @@ export default function FadeWords({ text, className = "" }: FadeWordsProps) {
             isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
           }`}
           style={{
-            // Aplica um atraso progressivo para cada palavra
             transitionDelay: `${index * 75}ms`,
           }}
         >

@@ -3,7 +3,7 @@ export interface Project {
   title: string;
   description: string;
   imageUrl: string;
-  link: string;
+  onCLick?: () => void;
   technologies: string[];
 }
 
@@ -11,7 +11,7 @@ export default function ProjectCard({
   title,
   description,
   imageUrl,
-  link,
+  onCLick,
   technologies,
 }: Project) {
   return (
@@ -22,7 +22,7 @@ export default function ProjectCard({
           <img
             src={imageUrl}
             alt={title}
-            onClick={() => window.open(link, "_blank")}
+            onClick={onCLick}
             className="w-full h-[250px] object-cover hover:scale-125 cursor-pointer transition-transform duration-500 "
           />
         </div>

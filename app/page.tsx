@@ -7,6 +7,11 @@ import ProjectCard from "./components/ProjectCard";
 import FadeWords from "./components/FadeWords";
 import ContactItem from "./components/ContactItem";
 import ScrollReveal from "./components/ScrollReveal";
+import Modal from "./components/Modal";
+import ProjectModalContent from "./components/ProjectModalContent";
+import MelphisModalContent from "./components/MelphisModalContent";
+import MelphisTvModalContent from "./components/MelphisTvModalContent";
+import SantsModalContent from "./components/SantsaModalContent";
 
 const TECH_IMAGES = [
   "react-native.png",
@@ -26,7 +31,9 @@ const TECH_IMAGES = [
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
-
+  const [isSantsModalOpen, setIsSantsModalOpen] = useState(false);
+  const [isMelphisFmModalOpen, setIsMelphisFmSantsModalOpen] = useState(false);
+  const [isMelphisTvModalOpen, setIsMelphisTvSantsModalOpen] = useState(false);
   useEffect(() => {
     // Pequeno atraso para disparar a animação logo após o componente carregar
     const timer = setTimeout(() => setIsLoaded(true), 100);
@@ -68,7 +75,25 @@ export default function Home() {
         </div>
         <div className="w-full flex flex-col items-center overflow-hidden">
           <div className="w-[600vw] lg:w-[250vw] lg:h-auto bg-white rounded-t-[100%] rounded-b-[100%] flex flex-col items-center py-28">
-            <ScrollReveal className="w-full h-auto flex flex-col items-center d-none">
+            <ScrollReveal className="w-screen h-auto flex flex-col items-center d-none">
+              <Modal
+                isOpen={isMelphisFmModalOpen}
+                onClose={() => setIsMelphisFmSantsModalOpen(false)}
+              >
+                <MelphisModalContent />
+              </Modal>
+              <Modal
+                isOpen={isMelphisTvModalOpen}
+                onClose={() => setIsMelphisTvSantsModalOpen(false)}
+              >
+                <MelphisTvModalContent />
+              </Modal>
+              <Modal
+                isOpen={isSantsModalOpen}
+                onClose={() => setIsSantsModalOpen(false)}
+              >
+                <SantsModalContent />
+              </Modal>
               <span className="text-[3.5rem] lg:text-[4.5rem] font-medium text-[#2b69fb]">
                 Meu trabalho
               </span>
@@ -80,7 +105,7 @@ export default function Home() {
                   title="Sants SCD (App Financeiro)"
                   description="Solução mobile para transações financeiras. Focada em operações e funcionalidades Pix, além de pagamentos de boletos e transferências via TED."
                   imageUrl="./santsapp.jpg"
-                  link="https://example.com"
+                  onCLick={() => setIsSantsModalOpen(true)}
                   technologies={[
                     "React Native",
                     "TypeScript",
@@ -93,7 +118,7 @@ export default function Home() {
                   title="Melphis.fm (Rádio e Vídeo)"
                   description="Solução mobile para streaming de rádio e vídeo, disponível para Android e iOS, com funcionalidades de seleção e gerenciamento de estações favoritas, além de participação em promoções e outras interações dentro da plataforma."
                   imageUrl="./melphis.jpg"
-                  link="https://example.com"
+                  onCLick={() => setIsMelphisFmSantsModalOpen(true)}
                   technologies={[
                     "React Native",
                     "TypeScript",
@@ -106,7 +131,7 @@ export default function Home() {
                   title="Melphis TV (Streaming de Vídeo)"
                   description="Solução mobile para streaming de vídeo. Transmite o canal de tv da emissora Melphis, disponível para Android e iOS."
                   imageUrl="./mtv.jpg"
-                  link="https://example.com"
+                  onCLick={() => setIsMelphisTvSantsModalOpen(true)}
                   technologies={[
                     "React Native",
                     "TypeScript",
