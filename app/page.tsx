@@ -44,7 +44,7 @@ export default function Home() {
     <div className="flex flex-col flex-1 items-center bg-zinc-50 font-sans dark:bg-black">
       <div className="w-full flex flex-col bg-[#0a001b] relative border-t-[8px] border-t-blue-500">
         <div className="absolute top-[-10%] left-[20%] w-full lg:w-[500px] lg:h-[300px] bg-purple-600/15 rounded-full blur-[120px] pointer-events-none" />
-        //INICIO SEÇÃO 1
+
         <div className="flex flex-1 flex-col-reverse lg:flex-row items-center justify-around pt-25 pb-35">
           <div className=" lg:items-start relative flex flex-col items-center w-full px-8 lg:px-0 max-w-2xl text-white">
             <Typewriter
@@ -74,7 +74,7 @@ export default function Home() {
             />
           </div>
         </div>
-        //FIM SEÇÃO 1 //INICIO SEÇÃO 2
+
         <div className="w-full flex flex-col items-center overflow-hidden">
           <div className="w-[600vw] lg:w-[250vw] lg:h-auto bg-white rounded-t-[100%] rounded-b-[100%] flex flex-col items-center py-28">
             <ScrollReveal className="w-screen h-auto flex flex-col items-center d-none">
@@ -146,7 +146,7 @@ export default function Home() {
             </ScrollReveal>
           </div>
         </div>
-        //FIM SEÇÃO 2 //INICIO SEÇÃO 3
+
         <div className="flex flex-1 flex-col w-full items-center justify-around lg:p-48 lg:px-0 lg:pt-24">
           <ScrollReveal className="w-full h-auto flex flex-col items-center">
             <div className=" relative flex flex-col items-center w-full px-8 lg:px-32 text-white ">
@@ -162,7 +162,7 @@ export default function Home() {
             </div>
           </ScrollReveal>
         </div>
-        //FIM SEÇÃO 3 //INICIO SEÇÃO 4
+
         <div className="flex flex-1 flex-col w-full items-center justify-around lg:pb-48">
           <ScrollReveal className="w-full h-auto flex flex-col items-center">
             <div className=" relative flex flex-col items-center w-full px-8 lg:px-32 text-white">
@@ -186,7 +186,7 @@ export default function Home() {
             </div>
           </ScrollReveal>
         </div>
-        //FIM SEÇÃO 4 //INICIO SEÇÃO 5
+
         <ScrollReveal className="w-full h-auto flex flex-col items-center">
           <div className="flex flex-1 flex-col gap-8 lg:gap-32 lg:flex-row items-center justify-around lg:pb-16">
             <div className=" lg:items-start relative flex flex-col items-center w-full px-8 lg:px-0 max-w-2xl text-white">
@@ -268,7 +268,6 @@ export default function Home() {
             />
           </div>
         </ScrollReveal>
-        //FIM SEÇÃO 5
       </div>
     </div>
   );

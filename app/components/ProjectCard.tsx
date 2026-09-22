@@ -28,13 +28,15 @@ export default function ProjectCard({
         </div>
         <div className="flex flex-col justify-between flex-1 p-4">
           <div className="flex flex-col gap-2">
-            <h1 className="text-[1.3rem] font-medium">{title}</h1>
-            <span className="text-[1.1rem] font-light">{description}</span>
+            <h1 className="text-[1.3rem] font-medium text-zinc-900">{title}</h1>
+            <span className="text-[1.1rem] font-light text-zinc-900">
+              {description}
+            </span>
           </div>
           <div>
             {technologies && technologies.length > 0 && (
               <>
-                <h1 className="text-[1.3rem] font-medium">
+                <h1 className="text-[1.3rem] font-medium text-zinc-900">
                   Tecnologias utilizadas:
                 </h1>
                 <div className="flex flex-wrap gap-2 pt-2">
