@@ -202,7 +202,7 @@ export default function Home() {
                 speed={60}
               />
               <FadeWords
-                text="Vamos construir algo incrível juntos! Se você está procurando um desenvolvedor Full Stack para transformar suas ideias em realidade, estou pronto para colaborar. Entre em contato e vamos discutir como posso contribuir para o sucesso do seu projeto."
+                text="Vamos construir algo incrível juntos! Se você está procurando um desenvolvedor FullStack para transformar suas ideias em realidade, estou pronto para colaborar. Entre em contato e vamos discutir como posso contribuir para o sucesso do seu projeto."
                 className="text-[18px] lg:text-[20px] font-light text-white"
               />
             </div>
