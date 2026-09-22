@@ -78,24 +78,30 @@ export default function Home() {
         <div className="w-full flex flex-col items-center overflow-hidden">
           <div className="w-[600vw] lg:w-[250vw] lg:h-auto bg-white rounded-t-[100%] rounded-b-[100%] flex flex-col items-center py-28">
             <ScrollReveal className="w-screen h-auto flex flex-col items-center d-none">
-              <Modal
-                isOpen={isMelphisFmModalOpen}
-                onClose={() => setIsMelphisFmSantsModalOpen(false)}
-              >
-                <MelphisModalContent />
-              </Modal>
-              <Modal
-                isOpen={isMelphisTvModalOpen}
-                onClose={() => setIsMelphisTvSantsModalOpen(false)}
-              >
-                <MelphisTvModalContent />
-              </Modal>
-              <Modal
-                isOpen={isSantsModalOpen}
-                onClose={() => setIsSantsModalOpen(false)}
-              >
-                <SantsModalContent />
-              </Modal>
+              {isMelphisFmModalOpen && (
+                <Modal
+                  isOpen={isMelphisFmModalOpen}
+                  onClose={() => setIsMelphisFmSantsModalOpen(false)}
+                >
+                  <MelphisModalContent />
+                </Modal>
+              )}
+              {isMelphisTvModalOpen && (
+                <Modal
+                  isOpen={isMelphisTvModalOpen}
+                  onClose={() => setIsMelphisTvSantsModalOpen(false)}
+                >
+                  <MelphisTvModalContent />
+                </Modal>
+              )}
+              {isSantsModalOpen && (
+                <Modal
+                  isOpen={isSantsModalOpen}
+                  onClose={() => setIsSantsModalOpen(false)}
+                >
+                  <SantsModalContent />
+                </Modal>
+              )}
               <span className="text-[3.5rem] lg:text-[3rem] font-medium text-[#2b69fb]">
                 Meu trabalho
               </span>
@@ -260,7 +266,7 @@ export default function Home() {
               />
             </div>
           </div>
-          <div className="flex w-full h-24 justify-end items-center pr-16">
+          <div className="flex w-full h-24 justify-center items-center">
             <Typewriter
               text="©2026 Everton Portfólio"
               className="text-[1rem] font-extralight  text-[#2b69fb]"
