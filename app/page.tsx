@@ -45,7 +45,7 @@ export default function Home() {
       <div className="w-full flex flex-col bg-[#0a001b] relative border-t-[8px] border-t-blue-500">
         <div className="absolute top-[-10%] left-[20%] w-full lg:w-[500px] lg:h-[300px] bg-purple-600/15 rounded-full blur-[120px] pointer-events-none" />
 
-        <div className="flex flex-1 flex-col-reverse lg:flex-row items-center justify-around pt-25 pb-35">
+        <div className="flex flex-1 flex-col-reverse lg:flex-row items-center justify-around pt-25 pb-45">
           <div className=" lg:items-start relative flex flex-col items-center w-full px-8 lg:px-0 max-w-2xl text-white">
             <Typewriter
               text="Bem vindo."
@@ -53,7 +53,7 @@ export default function Home() {
               speed={60}
             />
             <FadeWords
-              text="Sou Full Stack Developer | Web, Mobile e APIs com 3+ anos de experiência profissional. Atuo no desenvolvimento, evolução, manutenção e integração de sistemas, desde as regras de negócio até o produto final, sempre focando em código limpo, escalável e soluções alinhadas às necessidades do negócio."
+              text="Sou FullStack Developer | Web, Mobile e APIs com 3+ anos de experiência profissional. Atuo no desenvolvimento, evolução, manutenção e integração de sistemas, desde as regras de negócio até o produto final, sempre focando em código limpo, escalável e soluções alinhadas às necessidades do negócio."
               className="text-[18px] lg:text-[20px] font-light text-white"
             />
           </div>
